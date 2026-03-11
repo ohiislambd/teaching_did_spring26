@@ -232,6 +232,18 @@ summary(did_model)
     ## Multiple R-squared:  0.557,  Adjusted R-squared:  0.5536 
     ## F-statistic:   166 on 3 and 396 DF,  p-value: < 2.2e-16
 
+## Extract the Key Coefficient
+
+``` r
+coef(did_model)["treatment:post"]
+```
+
+    ## treatment:post 
+    ##       8.165059
+
+This interaction coefficient represents the additional post-period
+change in the treated group relative to the control group.
+
 # Interpreting the Coefficients
 
 In this regression:
@@ -269,18 +281,6 @@ The regression therefore estimates the sample averages, not the theoretical valu
 
 This is exactly what we expect in a stochastic model. In expectation, the regression still recovers the theoretical difference-in-differences effect, so the expected value of the interaction coefficient is 8. The realized estimate differs slightly because the simulated data contain random noise.
 
-## Extract the Key Coefficient
-
-``` r
-coef(did_model)["treatment:post"]
-```
-
-    ## treatment:post 
-    ##       8.165059
-
-This interaction coefficient represents the additional post-period
-change in the treated group relative to the control group.
-
 ## How to Make the Regression Match the Table Exactly
 
 If we remove the random variation and make outcomes equal to the group means, the regression coefficients will match the table exactly.
@@ -299,7 +299,9 @@ outcome = mean_outcome
 
 Now the data generating process becomes
 
+$$
 Y_igt = μ_gt
+$$
 
 so there is no error term. In that case the regression will produce coefficients exactly equal to the differences implied by the table:
 
@@ -308,7 +310,7 @@ so there is no error term. In that case the regression will produce coefficients
 - post = 4
 - treatment:post = 8
 
-This happens because the regression is now estimating the exact group averages used in the original difference-in-differences table.
+This happens because the regression is now estimating the exact group averages used in the original difference-in-differences table. Try out the regression using this data from the data-generateing process stated above. 
 
 ---
 
@@ -352,6 +354,7 @@ For example:
 - make both groups trend upward by the same amount
 
 How does each change affect the DiD estimate?
+
 
 
 
