@@ -6,11 +6,11 @@ Ohi Islam
 # Introduction
 
 When introducing the difference-in-differences (DiD) method in Economics
-of Education, it is often helpful to begin with intuition before turning
+of Education, we begin with intuition before turning
 to regression. This tutorial follows a step-by-step approach. We first
 examine outcomes visually, then organize them in a simple table, and
 finally connect that setup to a regression model. The goal is to help
-students understand how the DiD estimate captures the additional change
+you understand how the DiD estimate captures the additional change
 in outcomes for the treated group relative to the control group.
 
 # Learning Goals
@@ -152,6 +152,10 @@ Outcomes and Changes by Group
 This table shows that the treatment group improved more than the control
 group, and the extra improvement is the DiD estimate.
 
+Note that the Control Group experiences a increase by 4 points in the outcome variable between the pre- and post-treatment periods.
+Note that the Control Group already has a 2-point advantage over the treatment group in the outcome in the pre=treatment period. 
+
+
 # Regression Interpretation
 
 We now connect this idea to a regression model.
@@ -233,12 +237,14 @@ summary(did_model)
 In this regression:
 
 - the intercept is the average outcome for the control group in the pre
-  period
-- the coefficient on `treatment` is the difference between treatment and
-  control in the pre period
+  period.
+- the coefficient on `treatment` is approximately the difference between treatment and
+  control in the pre period. In the table of average differences, the $treatment\\ group\\ average - control\\ group\\ average$
+  in the pre-treatment period was $-2$
 - the coefficient on `post` is the change over time for the control
-  group
+  group. In the table of average differences, we saw that the $natural$ difference in outcome for the control group is a 4-point change.
 - the coefficient on `treatment:post` is the DiD estimate
+
 
 ## Extract the Key Coefficient
 
@@ -260,8 +266,7 @@ The same treatment effect appears in three ways:
 - in the table, as the difference between the two group-specific changes
 - in the regression, as the interaction coefficient
 
-This is why the DiD framework is useful pedagogically: students can see
-the same idea visually, numerically, and econometrically.
+
 
 # Parallel Trends Assumption
 
@@ -294,3 +299,4 @@ For example:
 - make both groups trend upward by the same amount
 
 How does each change affect the DiD estimate?
+
