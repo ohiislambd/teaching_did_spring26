@@ -240,7 +240,7 @@ In this regression:
   period.
 - the coefficient on `treatment` is approximately the difference between treatment and
   control in the pre period. In the table of average differences, the $treatment\\ group\\ average - control\\ group\\ average$
-  in the pre-treatment period was $-2$
+  in the pre-treatment period was $-2$.
 - the coefficient on `post` is the change over time for the control
   group. In the table of average differences, we saw that the $natural$ difference in outcome for the control group is a 4-point change.
 - the coefficient on `treatment:post` is the DiD estimate
@@ -299,5 +299,6 @@ For example:
 - make both groups trend upward by the same amount
 
 How does each change affect the DiD estimate?
+
 
 
