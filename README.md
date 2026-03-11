@@ -1,2 +1,2 @@
-# teaching_did_spring26
+# Teaching DID
 R tutorial explaining Difference-in-Differences (DiD) for Economics of Education students
