@@ -245,6 +245,27 @@ In this regression:
   group. In the table of average differences, we saw that the $natural$ difference in outcome for the control group is a 4-point change.
 - the coefficient on `treatment:post` is the DiD estimate
 
+In the regression section we did not use deterministic outcomes. Instead, we simulated individual-level data with random variation around the group means:
+
+```r
+outcome = rnorm(n = 4 * n, mean = mean_outcome, sd = 4)
+```
+
+This means the data generating process can be written as
+\[
+Y_igt = μ_gt + ε_igt
+\]
+where $μ_gt$ represents the group-period mean (50, 54, 48, or 60) and $ε_igt$ is a random disturbance.
+
+Because the outcomes include random variation, the sample averages in the simulated data are not exactly equal to the theoretical means. For example, the simulated control-group pre-period mean might be 50.36 instead of exactly 50.
+
+The regression therefore estimates the sample averages, not the theoretical values from the table. As a result:
+
+- the coefficient on `treatment` will be close to −2, but not exactly −2.
+- the coefficient on `post` will be close to 4, but not exactly 4.
+- the coefficient on `treatment:post` will be close to 8, but not exactly 8.
+
+This is exactly what we expect in a stochastic model. In expectation, the regression still recovers the theoretical difference-in-differences effect, so the expected value of the interaction coefficient is 8. The realized estimate differs slightly because the simulated data contain random noise.
 
 ## Extract the Key Coefficient
 
@@ -297,6 +318,7 @@ For example:
 - make both groups trend upward by the same amount
 
 How does each change affect the DiD estimate?
+
 
 
 
