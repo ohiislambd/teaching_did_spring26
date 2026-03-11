@@ -300,7 +300,7 @@ outcome = mean_outcome
 Now the data generating process becomes
 
 $$
-Y_igt = μ_gt
+Y_{igt} = μ_{gt}
 $$
 
 so there is no error term. In that case the regression will produce coefficients exactly equal to the differences implied by the table:
@@ -354,6 +354,7 @@ For example:
 - make both groups trend upward by the same amount
 
 How does each change affect the DiD estimate?
+
 
 
 
