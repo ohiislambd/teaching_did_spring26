@@ -284,7 +284,7 @@ institutional context to assess whether it is plausible.
 
 Difference-in-differences estimates the treatment effect by comparing
 changes over time across treated and untreated groups. The key parameter
-is the interaction between treatment status and the post-treatment
+is the coefficient of the interaction between treatment status and the post-treatment
 period.
 
 # Optional Exercise
@@ -299,4 +299,5 @@ For example:
 - make both groups trend upward by the same amount
 
 How does each change affect the DiD estimate?
+
 
