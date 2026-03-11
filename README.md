@@ -252,10 +252,10 @@ outcome = rnorm(n = 4 * n, mean = mean_outcome, sd = 4)
 ```
 
 This means the data generating process can be written as
-\[
-Y_igt = μ_gt + ε_igt
-\]
-where $μ_gt$ represents the group-period mean (50, 54, 48, or 60) and $ε_igt$ is a random disturbance.
+$$
+Y_{igt} = μ_{gt} + ε_{igt}
+$$
+where $μ_{gt}$ represents the group-period mean (50, 54, 48, or 60) and $ε_{igt}$ is a random disturbance.
 
 Because the outcomes include random variation, the sample averages in the simulated data are not exactly equal to the theoretical means. For example, the simulated control-group pre-period mean might be 50.36 instead of exactly 50.
 
@@ -318,6 +318,7 @@ For example:
 - make both groups trend upward by the same amount
 
 How does each change affect the DiD estimate?
+
 
 
 
