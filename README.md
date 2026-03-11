@@ -266,7 +266,31 @@ The same treatment effect appears in three ways:
 - in the table, as the difference between the two group-specific changes
 - in the regression, as the interaction coefficient
 
+## Why the Regression Coefficients Are Not Exactly Equal to the Table Differences
 
+In the earlier table, the outcomes were specified as deterministic group
+averages.
+
+  Group       Pre   Post   Change
+  ----------- ----- ------ --------
+  Control     50    54     4
+  Treatment   48    60     12
+
+From these values we can compute the theoretical differences:
+
+-   Pre-treatment difference: 48 b 50 = b2\
+-   Change in the control group: 54 b 50 = 4\
+-   Change in the treatment group: 60 b 48 = 12
+
+The difference-in-differences estimate is therefore
+
+(60 b 48) b (54 b 50) = 12 b 4 = 8.
+
+These numbers come directly from the table and are therefore exact.
+
+However, in the regression section we did not use deterministic
+outcomes. Instead, we simulated individual-level data with random
+variation around the group means:
 
 # Parallel Trends Assumption
 
@@ -299,6 +323,7 @@ For example:
 - make both groups trend upward by the same amount
 
 How does each change affect the DiD estimate?
+
 
 
 
