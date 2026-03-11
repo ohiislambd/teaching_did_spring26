@@ -281,6 +281,38 @@ coef(did_model)["treatment:post"]
 This interaction coefficient represents the additional post-period
 change in the treated group relative to the control group.
 
+## How to Make the Regression Match the Table Exactly
+
+If we remove the random variation and make outcomes equal to the group means, the regression coefficients will match the table exactly.
+
+Replace
+
+```r
+outcome = rnorm(n = 4 * n, mean = mean_outcome, sd = 4)
+```
+
+with
+
+```r
+outcome = mean_outcome
+```
+
+Now the data generating process becomes
+
+Y_igt = μ_gt
+
+so there is no error term. In that case the regression will produce coefficients exactly equal to the differences implied by the table:
+
+- Intercept = 50
+- treatment = −2
+- post = 4
+- treatment:post = 8
+
+This happens because the regression is now estimating the exact group averages used in the original difference-in-differences table.
+
+---
+
+
 # Linking the Graph, Table, and Regression
 
 The same treatment effect appears in three ways:
@@ -320,6 +352,7 @@ For example:
 - make both groups trend upward by the same amount
 
 How does each change affect the DiD estimate?
+
 
 
 
