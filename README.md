@@ -15,7 +15,7 @@ in outcomes for the treated group relative to the control group.
 
 # Learning Goals
 
-By the end of this tutorial, students should be able to:
+By the end of this tutorial, students you be able to:
 
 - describe the logic of a DiD design
 - compute a DiD estimate using average outcomes
@@ -152,7 +152,7 @@ Outcomes and Changes by Group
 This table shows that the treatment group improved more than the control
 group, and the extra improvement is the DiD estimate.
 
-Note that the Control Group experiences a increase by 4 points in the outcome variable between the pre- and post-treatment periods.
+Note that the Control Group experiences an increase by 4 points in the outcome variable between the pre- and post-treatment periods.
 Note that the Control Group already has a 2-point advantage over the treatment group in the outcome in the pre=treatment period. 
 
 
@@ -354,6 +354,7 @@ For example:
 - make both groups trend upward by the same amount
 
 How does each change affect the DiD estimate?
+
 
 
 
